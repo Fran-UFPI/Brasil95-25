@@ -2,11 +2,13 @@
 title: "O Governo Bolsonaro: Agenda Liberal e os Impactos da Pandemia"
 format: html
 ---
+
 ![](imagens/bolsonaro.jpeg){fig-align="center" width="30%"}
 
 ## Introdução
 
 # A Inflação (IPCA)
+
 ```{r}
 #| echo: false
 #| message: false
@@ -61,7 +63,8 @@ ggplot(dados_bolsonaro, aes(x= data_final, y= ipca_trimestral)) +
 theme(legend.position = "bottom")
 ```
 
-# O Regime Cambial 
+# O Regime Cambial
+
 ```{r}
 #| echo: false
 #| message: false
@@ -99,6 +102,7 @@ theme(legend.position = "bottom")
 ```
 
 # A Taxa Selic
+
 ```{r}
 #| echo: false
 #| message: false
@@ -113,7 +117,7 @@ ggplot(dados_selic_bolsonaro, aes(x= Anos, y = Selic))+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Selic: Da Mínima Histórica ao Enfrentamento da Inflação Pós-Pandemia (2019–2022)",
+    title = "Da Mínima Histórica ao Enfrentamento da Inflação Pós-Pandemia",
     subtitle = "O impacto dos juros na economia nos anos (2019-2022)",
     caption = "Fonte: Banco do Central/ SGS"
   )+

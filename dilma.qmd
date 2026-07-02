@@ -5,10 +5,10 @@ format: html
 
 ![](imagens/dilma.jpeg){fig-align="center" width="30%"}
 
-
 ## Introdução
 
 # A Inflação (IPCA)
+
 ```{r}
 #| echo: false
 #| message: false
@@ -63,15 +63,8 @@ ggplot(dados_dilma, aes(x= data_final, y= ipca_trimestral)) +
 theme(legend.position = "bottom")
 ```
 
-
-
-
-
-
-
-
-
 # Câmbio
+
 ```{r}
 #| echo: false
 #| message: false
@@ -106,8 +99,8 @@ names(dados_euro)[2] <- "value"
 theme(legend.position = "bottom")
 ```
 
-
 # A Taxa Selic
+
 ```{r}
 #| echo: false
 #| message: false
@@ -131,4 +124,3 @@ ggplot(dados_selic_dilma, aes(x= Anos, y = Selic))+
   theme_minimal()+
   theme(legend.position = "bottom")
 ```
-

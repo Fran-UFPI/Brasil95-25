@@ -1,7 +1,6 @@
 ---
 title: "Lula II (2023–presente)"
 format: html
-
 ---
 
 ![](imagens/lula3.jpeg){fig-align="center" width="30%"}
@@ -9,6 +8,7 @@ format: html
 ## Introdução
 
 # A Inflação (IPCA)
+
 ```{r}
 #| echo: false
 #| message: false
@@ -64,7 +64,8 @@ ggplot(dados_lula3, aes(x= data_final, y= ipca_trimestral)) +
 theme(legend.position = "bottom")
 ```
 
-# O Regime Cambial 
+# O Regime Cambial
+
 ```{r}
 
 #| echo: false
@@ -100,6 +101,7 @@ names(dados_euro)[2] <- "value"
 ```
 
 # A Taxa Selic
+
 ```{r}
 #| echo: false
 #| message: false
