@@ -7,6 +7,9 @@ format: html
 
 ## Introdução
 
+> *“A estabilização da economia e o fim da inflação foram o maior programa de combate à pobreza da história do Brasil”\
+> — Fernando Henrique Cardoso*
+
 Os dois mandatos do presidente Fernando Henrique Cardoso (1995-2002) representam um período de profunda transformação para a economia brasileira. Com a consolidação do Plano Real, o país finalmente quebrou o ciclo histórico da hiperinflação, dando início a uma era de estabilização monetária e profundas reformas estruturais.
 
 No entanto, a condução da política econômica ao longo desses oito anos enfrentou severos testes, oscilando entre momentos de calmaria interna e fortes choques vindos de crises financeiras internacionais. Para compreender as engrenagens e os desafios dessa gestão, vamos analisar a evolução integrada de três indicadores fundamentais na seguinte ordem:
@@ -17,7 +20,7 @@ No entanto, a condução da política econômica ao longo desses oito anos enfre
 
 **A Taxa Selic**: Juros mantidos elevados para garantir a atração de capital estrangeiro e sustentar o Real
 
-## **A Inflação (IPCA)**
+# A Inflação (IPCA)
 
 O início do seu mandato foi marcado por intensa pressão, devido a algumas preocupações em relação à economia brasileira.
 
@@ -76,10 +79,10 @@ ggplot(dados_fhc, aes(x= data_final, y= ipca_trimestral)) +
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
  title = "Comportamento do IPCA na Era FHC: Consolidação da Estabilidade",
-  subtitle = "Inflação Trimestral a partir de 1994(Ano Base Dezembro 1993)",
+  subtitle = "Variação Trimestral da Inflação Oficial (Série Encadeada — Base: Dezembro de 1993)",
   x = "Ano",
   y = "Inflação trimestral %",
-    caption = "Fonte: IBGE",
+    caption = "Fonte: SIDRA/IBGE",
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
@@ -132,11 +135,11 @@ ggplot(dados_fhc, aes(x= data_final, y= ipca_trimestral)) +
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
- title = "Comportamento do IPCA na Era FHC: Consolidação da Estabilidade",
-  subtitle = "Inflação Trimestral de 1996-2002 (Ano Base Dezembro 1993)",
+ title = "A Dinâmica do IPCA no Governo FHC",
+  subtitle = "Variação Trimestral da Inflação Oficial (Série Encadeada — Base: Dezembro de 1993)",
   x = "Ano",
-  y = "Inflação trimestral %",
-    caption = "Fonte: IBGE",
+  y = "Variação trimestral %",
+    caption = "Fonte: SIDRA/IBGE",
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
@@ -145,7 +148,7 @@ theme(legend.position = "bottom")
 
 Os efeitos dessa medidas, tanto os positivos como os negativos não demoraram para aparecer. A rápida recomposição da liquidez internacional poucos meses depois da crise mexicana, deixou evidente que o governo estava firmemente empenhado em defender a nova política cambial. Assim, atraídos pela rentabilidade elevada das aplicações em moeda local, os investidores retornaram ao país e as reservas internacionais fecharam em 1995 com US\$ 52 bilhões. Ao mesmo tempo, a inflação começou a ceder e daí em diante a taxa anual caiu ao longo de quatro anos consecutivos.
 
-## O Regime Cambial
+# O Regime Cambial
 
 ```{r}
 #| echo: false
@@ -195,7 +198,9 @@ Agora sob o regime de câmbio flutuante, o gráfico passa a mostrar fortes oscil
 
 Olhar para o gráfico do câmbio no governo FHC é, fundamentalmente, olhar para duas eras econômicas distintas: a calmaria controlada do primeiro mandato (em verde) e a montanha-russa do mercado livre no segundo mandato (em vermelho).
 
-## Variação da Taxa de Juros nos anos de Governo FHC
+**\[Nota Metodológica\]:** Dada a necessidade histórica de consolidação da nova moeda frente à divisa de reserva internacional utilizada para ancorar os preços domésticos, o foco analítico deste período restringe-se à dinâmica do Dólar americano. Esta abordagem difere das seções dos governos subsequentes, onde, sob a vigência estável do regime flutuante, priorizou-se uma análise comparativa multimoedas (Dólar, Euro e Yuan) para avaliar a inserção externa do Brasil nos mercados globais.
+
+# A Taxa Selic
 
 ```{r}
 #| echo: false
@@ -209,8 +214,10 @@ ggplot(dados_selic, aes(x= Anos, y = Selic))+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Selic: O Uso dos Juros Contra as Crises Internacionais",
+    title = "A Dinâmica da Taxa Selic no Governo FHC",
     subtitle = "O impacto dos juros na economia nos anos (1995-2002)",
+    x= "Período",
+    y= "Variação Selic %",
     caption = "Fonte: Banco do Central/ SGS"
   )+
   theme_minimal()+

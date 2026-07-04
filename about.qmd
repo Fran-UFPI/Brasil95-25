@@ -179,3 +179,19 @@ ggplot(dados_selic, aes(x= Anos, y = Selic))+
 ```
 
 Este script utiliza o pacote `rbcb` para coletar a série histórica da Taxa Selic acumulada no mês (código `4189`) direto da API do Banco Central do Brasil, delimitando o período entre 2003 e 2006 (primeiro governo Lula). Na etapa de preparação, o código renomeia as colunas originais do conjunto de dados para `"Anos"` (eixo temporal) e `"Selic"` (indicador econômico) para deixar a estrutura clara. Em seguida, os dados são alimentados no `ggplot2` para a construção de um gráfico de linha (`geom_line`) com espessura destacada (`size = 1.2`) e na cor amarela (`#ffc222`). A estilização dos eixos inclui a escala temporal do eixo X configurada para exibir marcadores de ano em ano (`%Y`) e o eixo Y customizado por uma função anônima que adiciona o símbolo de porcentagem (`%`) aos valores. Por fim, o gráfico recebe títulos informativos e contextuais através da função `labs()`, adota o tema visual limpo `theme_minimal()` e posiciona a legenda na parte inferior da imagem através do argumento `legend.position = "bottom"`
+
+## Referências Bibliográficas {.unnumbered}
+
+BANCO CENTRAL DO BRASIL. **SGS - Sistema Gerenciador de Séries Temporais**. Disponível em: <https://www3.bcb.gov.br/sgspub/>
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). **Sistema IBGE de Recuperação Automática (SIDRA)**. Disponível em: [https://sidra.ibge.gov.br/](https://www.google.com/search?q=https://sidra.ibge.gov.br/).
+
+### Livros utilizados:
+
+![](imagens/livro1.png){fig-align="center" width="30%"}
+
+GIAMBIAGI, Fabio; VILLELA, André; BARROS DE CASTRO, Lavínia; HERMANN, Jennifer (Org.). Economia Brasileira Contemporânea: 1945-2010. 2. ed. Rio de Janeiro: Elsevier/Campus, 2011.
+
+![](imagens/livro2.png){fig-align="center" width="30%"}
+
+LOPES, Ricardo. Brasil: do Real ao terceiro governo Lula. 3. ed. rev. São Paulo: Editora Ricco, 2026.

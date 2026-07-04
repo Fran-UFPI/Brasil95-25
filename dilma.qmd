@@ -7,6 +7,28 @@ format: html
 
 ## Introdução
 
+> *“É inadmissível que o Brasil, que tem um dos sistemas financeiros mais sólidos e lucrativos, continue com um dos juros mais altos do mundo. Esses valores não podem continuar tão altos.”*
+>
+> *— Dilma Rousseff*
+
+O governo Dilma Rousseff iniciou-se com duas medidas centrais: o aumento da taxa de juros e o corte de gastos públicos. Ambas tinham como objetivo moderar o consumo e o ritmo de crescimento econômico, que fora excessivamente alto no ano anterior (cerca de $7,5\%$ em 2010). Essas medidas eram consideradas necessárias para conter a inflação, que se aproximava do teto da meta do Regime de Metas de Inflação (RMI).
+
+Mas, no segundo semestre de 2011, cedendo às críticas de empresários e trabalhadores sindicalistas a uma desaceleração do PIB, o governo decidiu diminuir a taxa de juros e lançar o Plano Brasil Maior (PBM), um programa focado em subsídios e financiamentos para a economia. O maior foco foi a indústria, buscando impulsionar o crescimento a partir deste setor — tanto para abastecer o mercado interno quanto para estimular as exportações, que seriam facilitadas por uma desvalorização cambial. Essa nova orientação política foi denominada **Nova Matriz Econômica**. No entanto, devido às fortes críticas a essa condução, agora por parte dos investidores do mercado financeiro e da imprensa, em abril de 2013 o governo voltou a aumentar a taxa de juros, sem abrir mão dos subsídios e financiamentos industriais.
+
+No front externo, a economia mundial registrava menor crescimento e, consequentemente, importava menos. Devido a isso, apesar dos incentivos governamentais, as exportações brasileiras não apresentaram a capacidade de crescimento esperada — até porque, mesmo com a desvalorização cambial realizada, a moeda nacional ainda exibia sinais de sobrevalorização.
+
+À medida que a Nova Matriz Econômica avançava, o controle do IPCA passou a depender do represamento artificial de preços administrados, como combustíveis e energia elétrica. Essa política gerou fortes desequilíbrios fiscais que, somados à deterioração das contas públicas (as chamadas "pedaladas fiscais"), culminaram na perda do grau de investimento do país pelas agências de risco. A perda de credibilidade provocou uma forte fuga de capitais, resultando em uma desvalorização cambial severa. Para tentar conter a inflação que fora reprimida e posteriormente liberada, o Banco Central foi obrigado a elevar a taxa Selic drasticamente, alcançando o patamar de $14,25\%$ ao ano no final de 2015, consolidando um cenário de profunda recessão.
+
+Para compreender a fundo a dinâmica e os desdobramentos desse período, analisamos a evolução integrada de três variáveis centrais da política macroeconômica:
+
+- **A Inflação (IPCA):** O impacto inicial do represamento de preços administrados e a subsequente disparada com a liberação das tarifas.
+
+- **A Dinâmica Cambial:** A desvalorização induzida no primeiro momento e a forte depreciação do Real causada pela perda de credibilidade internacional.
+
+- **A Taxa Selic:** O ciclo inédito de queda forçada dos juros no início do mandato e o severo choque de alta necessário para conter a crise a partir de 2013.
+
+O agravamento desse quadro econômico, caracterizado pela combinação de recessão profunda, inflação flertando com os dois dígitos e desvalorização cambial severa, aprofundou a crise política do período. Esse cenário culminou no processo de *impeachment* de Dilma Rousseff, interrompendo o seu segundo mandato em agosto de 2016. Naquele momento de transição de poder, a taxa Selic encontrava-se estacionada em seu patamar máximo de $14,25\%$ ao ano, o IPCA acumulado em 12 meses iniciava uma trajetória de desaceleração lenta após atingir mais de $10\%$ em 2015, e a taxa de câmbio exibia forte volatilidade, refletindo as incertezas institucionais que seriam herdadas pelo governo seguinte.
+
 # A Inflação (IPCA)
 
 ```{r}
@@ -44,26 +66,31 @@ dados_dilma <- dados_dilma %>%
       mes_nome == "ABR" ~ "04", mes_nome == "MAI" ~ "05", mes_nome == "JUN" ~ "06",
       mes_nome == "JUL" ~ "07", mes_nome == "AGO" ~ "08", mes_nome == "SET" ~ "09",
       mes_nome == "OUT" ~ "10", mes_nome == "NOV" ~ "11", mes_nome == "DEZ" ~ "12"
-    ),
+   ),
     data_final = as.Date(paste(ano, mes_num, "01", sep = "-"))
  ) 
-
 ggplot(dados_dilma, aes(x= data_final, y= ipca_trimestral)) +
   geom_line( color= "#302681", size= 1.2)+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Comportamento do IPCA no Governo Dilma (2011–2016)",
-    subtitle = "Dados Oficiais do banco do Brasil",
+    title = "A Dinâmica do IPCA no Governo Dilma",
+    subtitle = "Variação Trimestral da Inflação Oficial (Série Encadeada — Base: Dezembro de 1993)",
     x = "Ano",
     y = "Variação trimestral %",
-    caption = "Fonte:Banco Central do Brasil/ SGS",
+    caption = "Fonte: SIDRA/IBGE",
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
 ```
 
-# Câmbio
+O gráfico da variação trimestral do IPCA reflete com precisão as idas e vindas da Nova Matriz Econômica e os choques estruturais que marcaram o governo Dilma Rousseff. Como observado no início do gráfico, o ano de 2011 começa com uma pressão inflacionária herdada do forte crescimento de 2010. Em resposta a essa elevação inicial, o governo acionou os mecanismos tradicionais de política monetária e fiscal, elevando a taxa de juros e contendo gastos. O gráfico demonstra o resultado positivo dessa estratégia ao longo de 2011 e início de 2012, período em que a variação trimestral da inflação apresenta uma queda acentuada, aproximando-se de patamares mais confortáveis.
+
+A partir do segundo semestre de 2011, cedendo às pressões políticas e empresariais contra a desaceleração do PIB, o governo iniciou uma forte flexibilização monetária, forçando a queda da Selic. Para evitar que essa injeção de estímulos fizesse a inflação explodir, a gestão adotou uma política de represamento artificial de preços administrados (como combustíveis e energia elétrica). No gráfico, esse período se traduz em dentes de oscilação contida: a inflação tenta subir devido ao aquecimento da demanda, mas recua temporariamente sob o efeito dos congelamentos tarifários, gerando uma falsa sensação de controle até meados de 2014.
+
+O represamento artificial mostrou-se insustentável após as eleições. No início de 2015, as tarifas foram liberadas de uma só vez para corrigir os rombos fiscais das estatais, ao mesmo tempo em que o país sofria uma severa desvalorização cambial. O resultado prático é o pico histórico visível no gráfico em 2015: a inflação trimestral dispara, rompendo o teto e flertando com os dois dígitos no acumulado anual. Para conter essa disparada, o Banco Central foi obrigado a elevar a Selic ao patamar drástico de 14,25% ao ano. Esse forte remédio monetário, somado à recessão profunda que se instalou, explica a queda abrupta da inflação observada entre o final de 2015 e o ano de 2016, quando a contração da atividade econômica acabou por desinflar os preços pela base da demanda.
+
+# A Dinâmica Cambial
 
 ```{r}
 #| echo: false
@@ -87,8 +114,8 @@ names(dados_euro)[2] <- "value"
   scale_y_continuous(labels = function(x)paste0(x,"R$"))+
   
   labs(
-    title = "Evolução da Taxa de Câmbio no Governo Dilma",
-    subtitle = "",
+    title = "A Dinâmica Cambial no Governo Dilma",
+    subtitle = "Taxa de Câmbio em Relação ao Dólar, Euro e Yuan (2011–2016)",
     x= "Ano",
     y= "preçoem Real(R$)",
     fill="Regime Cambial",
@@ -98,6 +125,8 @@ names(dados_euro)[2] <- "value"
   theme_minimal()+
 theme(legend.position = "bottom")
 ```
+
+O gráfico comparativo das taxas de câmbio ilustra a trajetória do Real em relação a uma cesta de moedas fortes (o Dólar americano, o Euro e o Yuan chinês), evidenciando a perda de poder de compra da moeda nacional. Isso fica mais evidente se observarmos o comportamento do Yuan chinês (linha azul): durante os governos anteriores e o início do governo Dilma, a variação dessa linha era muito próxima de zero, mantendo uma estabilidade linear em patamares baixos. Contudo, entre 2015 e 2016, percebe-se um crescimento nítido e uma quebra dessa calmaria. Esse movimento gráfico revela que a crise de credibilidade interna e a severa recessão brasileira foram tão intensas que o Real perdeu valor de forma generalizada — não apenas frente às moedas ocidentais tradicionais, como o Dólar e o Euro, mas também perante o Yuan, consolidando o cenário de depreciação global da nossa moeda no desfecho daquele mandato.
 
 # A Taxa Selic
 
@@ -115,12 +144,14 @@ ggplot(dados_selic_dilma, aes(x= Anos, y = Selic))+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Selic: A Nova Matriz Econômica e o Repique dos Juros",
-    subtitle = "O impacto dos juros na economia nos anos (2011-2016)",
-    x= "Taxa Selic",
-    y= "Ano",
+    title = "A Dinâmica da Taxa Selic no Governo Dilma(2011–2016)",
+    subtitle = "volução dos Juros Básicos sob Pressões Políticas e de Mercado",
+    x= "Período",
+    y= "Variação Selic %",
     caption = "Fonte: Banco do Central/ SGS"
   )+
   theme_minimal()+
   theme(legend.position = "bottom")
 ```
+
+O gráfico da Taxa Selic ilustra a trajetória dos juros básicos da economia e evidencia o forte impacto das pressões políticas e sociais do período sobre a autoridade monetária. Inicialmente, o governo cedeu às duras críticas de trabalhadores e sindicalistas que exigiam a redução imediata dos juros para estimular o PIB, o que explica a tendência de queda das linhas no início do mandato. Contudo, essa tentativa de forçar os juros para baixo acabou alimentando a inflação e, pouco tempo depois, o cenário se reverteu com fortes críticas por parte de investidores e da imprensa, que passavam a exigir a subida dos juros para conter os preços. Se observarmos o comportamento da linha do Yuan chinês (linha azul no gráfico anterior), sua variação era quase zero nos anos anteriores a 2015, mantendo-se linear e rasteira. Porém, entre 2015 e 2016, com o agravamento da crise e a necessidade de um ajuste drástico, podemos perceber um crescimento nítido e vertical. Esse movimento no gráfico revela que o desajuste macroeconômico foi tão severo que forçou um choque de juros recorde no encerramento daquele mandato para tentar segurar as expectativas do mercado.

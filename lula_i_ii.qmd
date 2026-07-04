@@ -7,17 +7,20 @@ format: html
 
 ## Introdução
 
+> *“A economia é igual à gestão: você não pode acelerar o nascimento de uma criança”\
+> — Luiz Inácio Lula da Silva*
+
 Os dois mandatos do presidente **Luiz Inácio Lula da Silva (2003–2010)** representam um dos capítulos mais paradoxais da história econômica brasileira recente. Um ex-operário sindicalista, cuja trajetória política foi construída sobre uma crítica sistemática à ortodoxia econômica, assumiu o poder em janeiro de 2003 herdando uma crise de desconfiança sem precedentes — e surpreendeu o mundo ao aprofundar, em vez de romper, o arcabouço de política econômica herdado do governo anterior.
 
 O cenário no momento da posse era de forte turbulência. Ao longo de 2002, a simples perspectiva de uma vitória eleitoral do PT havia sido suficiente para desancorar as expectativas dos mercados: o dólar disparou de R\$ 2,32 para quase R\$ 3,89, a inflação encerrou o ano em 12,5% e a taxa Selic atingiu 25% ao ano antes mesmo da troca de governo. O Brasil chegava a 2003 carregando o peso de uma desconfiança que, até então, nenhum governo eleito havia precisado enfrentar com tanta intensidade.
 
 Para compreender a trajetória econômica desse período, este trabalho analisa a evolução integrada de três variáveis centrais da política monetária brasileira:
 
-**A Inflação (IPCA)**: a trajetória de queda a partir de 2003, a convergência para a meta de 4,5% e o impacto da crise de 2008.
+- **A Inflação (IPCA)**: a trajetória de queda a partir de 2003, a convergência para a meta de 4,5% e o impacto da crise de 2008.
 
-**O Regime Cambial**: a forte valorização do real impulsionada pelo boom das commodities e a brusca reversão com a crise financeira global.
+- **A Dinâmica Cambial**: a forte valorização do real impulsionada pelo boom das commodities e a brusca reversão com a crise financeira global.
 
-**A Taxa Selic**: os quatro ciclos de alta e queda dos juros ao longo dos dois mandatos e seu papel central no controle da inflação.
+- **A Taxa Selic**: os quatro ciclos de alta e queda dos juros ao longo dos dois mandatos e seu papel central no controle da inflação.
 
 A análise está dividida em dois blocos — o Governo Lula I (2003–2006) e o Governo Lula II (2007–2010) — cada um com seus desafios, seus instrumentos e seus resultados. Juntos, os dois mandatos revelam não apenas o que aconteceu com a economia brasileira, mas como e por quê uma era de estabilidade e crescimento foi construída sobre fundamentos que poucos, em 2002, acreditavam que um governo do PT seria capaz de sustentar.
 
@@ -80,11 +83,11 @@ ggplot(dados_lula1, aes(x= data_final, y= ipca_trimestral)) +
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
- title = "IPCA no primeiro Governo Lula: Consolidação e Metas",
-  subtitle = "Variação da inflação a apartir de 2003 (Ano base Dezembro 1993)",
+ title = "A Dinâmica do IPCA no Governo Lula I",
+  subtitle = "Variação Trimestral da Inflação Oficial (Série Encadeada — Base: Dezembro de 1993)",
   x = "Ano",
   y = "Inflação trimestral %",
-    caption = "Fonte:Banco Central do Brasil/ SGS",
+   caption = "Fonte:SIDRA/IBGE"
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
@@ -100,7 +103,7 @@ A partir de 2004, o gráfico muda de comportamento. A linha para de cair e passa
 
 O final do mandato, em 2006, traz o momento mais favorável de todo o período: a linha toca próximo de zero em dois momentos distintos, sinalizando uma inflação trimestral praticamente inexistente. Era o resultado acumulado de quatro anos de disciplina monetária — e o sinal de que o regime de metas de inflação, que o próprio PT havia criticado durante anos, estava funcionando.
 
-## **Variação do câmbio**
+# A Dinâmica Cambial
 
 ```{r}
 #| echo: false
@@ -124,8 +127,8 @@ names(dados_euro)[2] <- "value"
   scale_y_continuous(labels = function(x)paste0(x,"R$"))+
   
   labs(
-    title = "Evolução da Taxa de Câmbio no Governo Lula",
-    subtitle = "",
+    title = "A Dinâmica Cambial no Governo Lula I",
+    subtitle = "Taxa de Câmbio em Relação ao Dólar, Euro e Yuan (2003–2006)",
     x= "Ano",
     y= "preçoem Real(R$)",
     fill="Regime Cambial",
@@ -161,8 +164,10 @@ ggplot(dados_selic_lula1, aes(x= Anos, y = Selic))+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Política Monetária Rígida e Queda Gradual dos Juros",
+    title = "A Dinâmica da Taxa Selic no Governo Lula I",
     subtitle = "O impacto dos juros na economia nos anos (2003-2007)",
+    x="Período",
+    y=" Variação Selic %",
     caption = "Fonte: Banco do Central/ SGS"
   )+
   theme_minimal()+
@@ -189,7 +194,7 @@ Esse ciclo foi interrompido de forma abrupta no final de 2008, quando a **crise 
 
 O saldo dos dois mandatos, ao final, era inegavelmente positivo: inflação média de 5,7% ao ano, crescimento médio de 4,0%, dívida pública caindo de 60% para 40% do PIB e reservas internacionais que, pela primeira vez na história, superavam a dívida externa bruta. O Brasil havia se transformado — mas os alicerces dessa transformação já carregavam, nos anos finais, as sementes de desequilíbrios que o governo seguinte herdaria.
 
-## A Inflação (IPCA)
+# A Inflação (IPCA)
 
 O segundo mandato de Lula começou num cenário bem diferente do primeiro. Em 2007, a inflação já estava sob controle, o regime de metas havia se consolidado e a economia crescia de forma consistente. Mas esse ambiente favorável trazia consigo um risco silencioso: com o consumo das famílias se expandindo, o crédito em aceleração e o gasto público crescendo de forma expressiva — especialmente após a troca de **Antonio Palocci** por **Guido Mantega** no Ministério da Fazenda —, as pressões de demanda voltavam a se acumular. A mudança de postura do governo era evidente: o superávit primário foi gradualmente reduzido, o BNDES ampliou de forma substancial seu papel na economia e a retórica oficial deixou de enfatizar a continuidade para passar a se diferenciar do governo anterior. Era o início do que Giambiagi chamaria de afrouxamento da ortodoxia.
 
@@ -237,11 +242,11 @@ ggplot(dados_lula2, aes(x= data_final, y= ipca_trimestral)) +
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Crescimento Econômico e Pressão de Demanda",
-    subtitle = "Inflação nos anos 2007-2010 (Ano Base dezembro 1993)",
+    title = "A Dinâmica do IPCA no Governo Lula II",
+    subtitle = "Variação Trimestral da Inflação Oficial (Série Encadeada — Base: Dezembro de 1993)",
     x = "Ano",
     y = "Variação trimestral %",
-    caption = "Fonte: IBGE",
+    caption = "Fonte: SIDRA/IBGE"
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
@@ -253,7 +258,7 @@ A virada veio com a crise financeira global. No final de 2008, a demanda mundial
 
 A recuperação foi rápida. Com as medidas anticíclicas do governo — corte de impostos, expansão do crédito público e aumento do gasto — a economia voltou a crescer com força. O PIB de 2010 fechou em 7,5%, e o gráfico mostra a inflação respondendo na mesma direção: a variação trimestral volta a subir ao longo de 2010, encerrando o mandato num patamar mais alto do que havia começado. A oscilação brusca no final — uma queda seguida de alta acentuada rumo a 2011 — não é estabilização. É o sinal de que a pressão inflacionária estava se acumulando e seria herdada, com força total, pelo governo seguinte.
 
-## O Regime Cambial
+# A Dinâmica Cambial
 
 ```{r}
 #| echo: false
@@ -278,13 +283,13 @@ names(dados_euro)[2] <- "value"
   scale_y_continuous(labels = function(x)paste0(x,"R$"))+
   
   labs(
-    title = "Evolução da Taxa de Câmbio  no Governo Lula II",
-    subtitle = " Volatilidade e os Impactos da Crise de 2008 (2007–2010)",
+    title = "A Dinâmica Cambial no Governo Lula II",
+    subtitle = " Taxa de Câmbio em Relação ao Dólar, Euro e Yuan (2007–2010)",
     x= "Ano",
     y= "preço em Real(R$)",
     fill="Regime Cambial",
     color= "Regime Cambial",
-    caption = "Fonte:Banco Central/SGS"
+    caption = "Fonte: Banco Central/SGS"
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
@@ -300,7 +305,7 @@ A recuperação veio, mas foi gradual. A partir de 2009, as linhas voltam a cair
 
 O yuan, como no mandato anterior, permanece colado no chão durante todo o período. A China manteve sua política de câmbio administrado sem alteração — atravessou a maior crise financeira global desde 1929 sem deixar sua moeda se mover. É o contraste mais silencioso do gráfico, mas também o mais revelador.
 
-## A Taxa Selic
+# A Taxa Selic
 
 ```{r}
 #| echo: false
@@ -316,8 +321,10 @@ ggplot(dados_selic_lula2, aes(x= Anos, y = Selic))+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Flexibilização Monetária e Medidas Anticrise (2007–2010)",
+    title = "A Dinâmica da Taxa Selic no Governo Lula II (2007–2010)",
     subtitle = "O impacto dos juros na economia",
+    x= "Período",
+    y= "Variação Selic %",
     caption = "Fonte: Banco do Central/ SGS"
   )+
   theme_minimal()+

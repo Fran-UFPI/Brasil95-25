@@ -7,6 +7,24 @@ format: html
 
 ## Introdução
 
+> *“Apesar da crise mundial, o Brasil chegou ao final de 22 com a economia em plena recuperação. Temos emprego em alta e inflação em baixa”*
+>
+> *— Jair M. Bolsonaro*
+
+O governo de Jair Bolsonaro iniciou-se em janeiro de 2019 sob uma forte guinada ideológica e econômica à direita. No campo econômico, a gestão caracterizou-se pela nomeação do economista Paulo Guedes para o Ministério da Economia, estabelecendo uma agenda de forte orientação ultraliberal. O cerne dessa política baseava-se em reformas estruturais de austeridade, privatizações, desregulamentação trabalhista e flexibilização das exigências para abertura de empresas, buscando atrair o capital privado e agradar investidores e agentes do mercado financeiro. Entre os principais marcos desse período, destaca-se a aprovação da Reforma da Previdência em 2019.
+
+No entanto, o desempenho macroeconômico do país enfrentou profundas rupturas a partir de 2020 devido à eclosão da pandemia de Covid-19. O gerenciamento governamental da crise sanitária gerou intensas controvérsias políticas, afetando a dinâmica produtiva e o mercado de trabalho. Para mitigar os impactos da paralisia econômica sobre a renda dos trabalhadores de menor poder aquisitivo, foi instituído pelo Congresso o Auxílio Emergencial (inicialmente de 200 reais e posteriormente ampliado para 600 reais), medida que sustentou minimamente o consumo e impediu uma queda ainda mais severa do PIB. Mesmo assim, o período foi marcado por forte instabilidade e pelo crescimento do desemprego, que atingiu picos expressivos antes de iniciar uma trajetória de recuperação.
+
+No front financeiro e monetário, a condução da política econômica sob a liderança do Banco Central (que passaria a contar com autonomia formal durante o mandato) lidou com cenários extremos. No auge da recessão pandêmica em 2020, os juros básicos foram reduzidos a patamares historicamente baixos, buscando reaquecer os canais de crédito. Contudo, os desequilíbrios fiscais decorrentes dos gastos emergenciais extraordinários, somados aos choques nas cadeias globais de suprimentos e à alta das commodities, desencadearam um processo inflacionário severo. Diante de um IPCA que chegou a atingir os dois dígitos, a autoridade monetária respondeu com um ciclo agressivo de elevação dos juros no encerramento do mandato, restabelecendo patamares altamente restritivos para a atividade econômica.
+
+Para compreender os desdobramentos práticos e os resultados econômicos dessa complexa conjuntura, este bloco analisa a evolução integrada de três variáveis fundamentais:
+
+- **A Inflação (IPCA):** A volatilidade dos preços sob os choques de oferta globais e os efeitos da desvalorização da moeda nacional na inflação doméstica.
+
+- **A Dinâmica Cambial e o Mercado Global:** As oscilações do Real em um ambiente de forte aversão ao risco internacional, tensões institucionais e flutuações nas exportações agrícolas brasileiras.
+
+- **A Taxa Selic:** O movimento histórico de queda ao piso mínimo de 2% ao ano e o posterior reajuste severo para conter o avanço dos índices inflacionários na economia.
+
 # A Inflação (IPCA)
 
 ```{r}
@@ -53,17 +71,17 @@ ggplot(dados_bolsonaro, aes(x= data_final, y= ipca_trimestral)) +
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Comportamento do IPCA no Governo Bolsonaro",
-    subtitle = " Os Impactos Inflacionários da Pandemia (2019–2022)",
+    title = "A Dinâmica do IPCA no Governo Bolsonaro",
+    subtitle = "Variação Trimestral da Inflação Oficial (Série Encadeada — Base: Dezembro de 1993)",
     x = "Ano",
-    y = "Variação %",
-    caption = "Fonte:Banco Central do Brasil/ SGS",
+    y = "Variação trimestral %",
+    caption = "Fonte: SIDRA/IBGE",
   )+
   theme_minimal()+
 theme(legend.position = "bottom")
 ```
 
-# O Regime Cambial
+# A Dinâmica Cambial
 
 ```{r}
 #| echo: false
@@ -89,12 +107,12 @@ names(dados_euro)[2] <- "value"
   scale_y_continuous(labels = function(x)paste0(x,"R$"))+
   
   labs(
-    title = "Evolução da Taxa de Câmbio",
-    subtitle = "Pressão Cambial e Nova Linha de Patamar do Dólar (2019–2022)",
+    title = "A Dinâmica Cambial no Governo Bolsonaro",
+    subtitle = "Taxa de Câmbio em Relação ao Dólar, Euro e Yuan (2019–2022)",
     x= "Ano",
     y= "preço do Dolar (R$)",
     fill="Regime Cambial",
-    color= "Regime Cambial",
+    color= "Moeda",
     caption = "Fonte:Banco Central/SGS"
   )+
   theme_minimal()+
@@ -117,8 +135,10 @@ ggplot(dados_selic_bolsonaro, aes(x= Anos, y = Selic))+
   scale_x_date(date_breaks = "1 year", date_labels ="%Y")+
   scale_y_continuous(labels = function(x)paste0(x,"%"))+
   labs(
-    title = "Da Mínima Histórica ao Enfrentamento da Inflação Pós-Pandemia",
-    subtitle = "O impacto dos juros na economia nos anos (2019-2022)",
+    title = "A Dinâmica da Taxa Selic no Governo Bolsonaro",
+    subtitle = "Evolução dos Juros Básicos entre Mínimas Históricas e Ciclo de Alta (2019–2022)",
+    x= "Período",
+    y= "Variação Selic %",
     caption = "Fonte: Banco do Central/ SGS"
   )+
   theme_minimal()+

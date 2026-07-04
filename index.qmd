@@ -3,6 +3,7 @@ title: "Governos Brasileiros 1995–2025"
 subtitle: "Análise histórica e econômica dos governos presidenciais"
 page-layout: full
 ---
+
 ## Linha do tempo
 
 | Governo   | Período       | Partido | Presidente                |
@@ -18,6 +19,7 @@ page-layout: full
 ## Governos
 
 ### FHC
+
 **1995 – 2002 · PSDB**
 
 Dois mandatos marcados pela implementação do Plano Real, controle da hiperinflação e privatizações. Adoção do regime de metas de inflação e câmbio flutuante em 1999.
@@ -25,6 +27,7 @@ Dois mandatos marcados pela implementação do Plano Real, controle da hiperinfl
 [Ver análise](fernando_hc.html)
 
 ### Lula I e II
+
 **2003 – 2010 · PT**
 
 Dois mandatos marcados pela manutenção da ortodoxia econômica, expansão dos programas sociais e boom das commodities. Enfrentamento da crise financeira global de 2008 com políticas anticíclicas. PIB cresceu 7,5% em 2010.
@@ -62,4 +65,3 @@ Aprovação da Reforma da Previdência (2019). Pandemia de COVID-19 gerou crise 
 Terceiro mandato com agenda de reindustrialização e retomada de programas sociais. Aprovação do novo arcabouço fiscal em 2023. Debate entre expansão de gastos e controle da dívida pública.
 
 [Ver análise](lula_iii.html)
-

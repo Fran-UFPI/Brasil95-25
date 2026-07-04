@@ -187,6 +187,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a-mudança-no-câmbio-de-fixo-para-flutuante" id="toc-a-mudança-no-câmbio-de-fixo-para-flutuante" class="nav-link" data-scroll-target="#a-mudança-no-câmbio-de-fixo-para-flutuante">A Mudança no Câmbio de Fixo para Flutuante</a></li>
   <li><a href="#comparativo-monetário" id="toc-comparativo-monetário" class="nav-link" data-scroll-target="#comparativo-monetário">Comparativo Monetário</a></li>
   <li><a href="#taxa-selic" id="toc-taxa-selic" class="nav-link" data-scroll-target="#taxa-selic">Taxa Selic</a></li>
+  <li><a href="#referências-bibliográficas" id="toc-referências-bibliográficas" class="nav-link" data-scroll-target="#referências-bibliográficas">Referências Bibliográficas</a>
+  <ul class="collapse">
+  <li><a href="#livros-utilizados" id="toc-livros-utilizados" class="nav-link" data-scroll-target="#livros-utilizados">Livros utilizados:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -358,8 +362,28 @@ Lembrando que os dados em questão são uma série Histórica, portanto observam
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Este script utiliza o pacote <code>rbcb</code> para coletar a série histórica da Taxa Selic acumulada no mês (código <code>4189</code>) direto da API do Banco Central do Brasil, delimitando o período entre 2003 e 2006 (primeiro governo Lula). Na etapa de preparação, o código renomeia as colunas originais do conjunto de dados para <code>"Anos"</code> (eixo temporal) e <code>"Selic"</code> (indicador econômico) para deixar a estrutura clara. Em seguida, os dados são alimentados no <code>ggplot2</code> para a construção de um gráfico de linha (<code>geom_line</code>) com espessura destacada (<code>size = 1.2</code>) e na cor amarela (<code>#ffc222</code>). A estilização dos eixos inclui a escala temporal do eixo X configurada para exibir marcadores de ano em ano (<code>%Y</code>) e o eixo Y customizado por uma função anônima que adiciona o símbolo de porcentagem (<code>%</code>) aos valores. Por fim, o gráfico recebe títulos informativos e contextuais através da função <code>labs()</code>, adota o tema visual limpo <code>theme_minimal()</code> e posiciona a legenda na parte inferior da imagem através do argumento <code>legend.position = "bottom"</code></p>
+</section>
+<section id="referências-bibliográficas" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="referências-bibliográficas">Referências Bibliográficas</h2>
+<p>BANCO CENTRAL DO BRASIL. <strong>SGS - Sistema Gerenciador de Séries Temporais</strong>. Disponível em: <a href="https://www3.bcb.gov.br/sgspub/" class="uri">https://www3.bcb.gov.br/sgspub/</a></p>
+<p>INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). <strong>Sistema IBGE de Recuperação Automática (SIDRA)</strong>. Disponível em: <a href="https://www.google.com/search?q=https://sidra.ibge.gov.br/">https://sidra.ibge.gov.br/</a>.</p>
+<section id="livros-utilizados" class="level3">
+<h3 class="anchored" data-anchor-id="livros-utilizados">Livros utilizados:</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/livro1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+<p>GIAMBIAGI, Fabio; VILLELA, André; BARROS DE CASTRO, Lavínia; HERMANN, Jennifer (Org.). Economia Brasileira Contemporânea: 1945-2010. 2. ed.&nbsp;Rio de Janeiro: Elsevier/Campus, 2011.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagens/livro2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+<p>LOPES, Ricardo. Brasil: do Real ao terceiro governo Lula. 3. ed.&nbsp;rev. São Paulo: Editora Ricco, 2026.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
