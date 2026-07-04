@@ -4,12 +4,12 @@
 
 /* ── Variáveis ── */
 :root {
-  --verde-escuro: #1a3a2a;
-  --verde-medio: #1D9E75;
-  --verde-claro: #E1F5EE;
+  --azul-escuro: #0d3349;
+  --azul-medio: #1b7a9e;
+  --azul-claro: #e4f4fb;
   --texto: #1a1a1a;
   --texto-suave: #555;
-  --borda: #d0e8dc;
+  --borda: #b8dff0;
 }
 
 /* ── Base ── */
@@ -21,30 +21,30 @@ body {
 
 h1, h2, h3, h4 {
   font-family: 'Merriweather', serif;
-  color: var(--verde-escuro);
+  color: var(--azul-escuro);
 }
 
 /* ── Navbar ── */
 .navbar {
-  background-color: var(--verde-escuro) !important;
-  border-bottom: 2px solid var(--verde-medio);
+  background-color: var(--azul-escuro) !important;
+  border-bottom: 2px solid var(--azul-medio);
 }
 
 .navbar-brand, .nav-link {
-  color: #e8f5ee !important;
+  color: #e4f4fb !important;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
 
 .nav-link:hover {
-  color: var(--verde-medio) !important;
+  color: var(--azul-medio) !important;
 }
 
 /* ── Hero (título da home) ── */
 .quarto-title h1 {
   font-size: 2.2rem;
-  color: var(--verde-escuro);
-  border-bottom: 3px solid var(--verde-medio);
+  color: var(--azul-escuro);
+  border-bottom: 3px solid var(--azul-medio);
   padding-bottom: 0.4rem;
 }
 
@@ -54,16 +54,28 @@ h1, h2, h3, h4 {
 }
 
 /* ── Grid de governos ── */
+.grid > div {
+  background-color: #f0f9fd;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  transition: box-shadow 0.2s;
+}
+
+.grid > div:hover {
+  box-shadow: 0 4px 12px rgba(27, 122, 158, 0.15);
+}
+
 .grid h3 {
   font-size: 1.1rem;
-  color: var(--verde-escuro);
-  border-left: 4px solid var(--verde-medio);
+  color: var(--azul-escuro);
+  border-left: 4px solid var(--azul-medio);
   padding-left: 10px;
   margin-bottom: 6px;
 }
 
 .grid strong {
-  color: var(--verde-medio);
+  color: var(--azul-medio);
   font-size: 0.85rem;
 }
 
@@ -73,7 +85,7 @@ h1, h2, h3, h4 {
 }
 
 .grid a {
-  color: var(--verde-medio);
+  color: var(--azul-medio);
   font-weight: 500;
   text-decoration: none;
   font-size: 0.85rem;
@@ -91,12 +103,16 @@ table {
 }
 
 thead tr {
-  background-color: var(--verde-escuro);
-  color: #e8f5ee;
+  background-color: var(--azul-escuro);
+  color: #e4f4fb;
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--verde-claro);
+  background-color: var(--azul-claro);
+}
+
+tbody tr:hover {
+  background-color: #c2e8f5;
 }
 
 td, th {
@@ -113,8 +129,8 @@ h2 {
 
 /* ── Rodapé ── */
 .nav-footer {
-  background-color: var(--verde-escuro);
-  color: #9fcfb0;
+  background-color: var(--azul-escuro);
+  color: #a8d8ec;
   font-size: 0.85rem;
   padding: 1rem 0;
 }

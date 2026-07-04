@@ -1,5 +1,5 @@
 ---
-title: "A Picanha como Prêmio (2023–presente)"
+title: "Crescimento com Tensão Fiscal (2023–presente)"
 format: html
 ---
 
@@ -91,11 +91,9 @@ Felizmente, o gráfico mostra que o pior passou rápido. Logo após o pico de 20
 # A Dinâmica Cambial
 
 ```{r}
-
 #| echo: false
 #| message: false
 #| warning: false
-
 
 dados_dolar <- get_series(3697, start_date="2023-01-01", end_date = "2025-12-31")
 names(dados_dolar)[2] <- "value"
