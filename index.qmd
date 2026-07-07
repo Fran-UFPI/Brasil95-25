@@ -1,6 +1,9 @@
 ---
 title: "Governos Brasileiros 1995–2025"
 subtitle: "Análise histórica e econômica dos governos presidenciais"
+author:
+  - name: Lara Angelina
+  - name: Francielle Mendes
 page-layout: full
 ---
 
